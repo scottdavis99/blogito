@@ -6,7 +6,8 @@ class UrlMappings {
 		  }
 	  }
 	  "/"(controller:"entry")
-	  "/blog/$id"(controller:"entry", action="list")
+	  "/blog/$id/$title?"(controller:"entry", action="list")
+	  "/entry/$action?/$id?/$title?"(controller:"entry")
 	  "500"(view:'/error')
 	}
 }
