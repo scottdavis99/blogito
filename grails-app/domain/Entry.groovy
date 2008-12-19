@@ -10,6 +10,8 @@ class Entry {
     sort "lastUpdated":"desc"
   }  
   
+  static belongsTo = [author:User]
+  
   String title
   String summary
   Date dateCreated
