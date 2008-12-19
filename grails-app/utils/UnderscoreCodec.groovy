@@ -1,4 +1,4 @@
-class EntryTitleCodec {
+class UnderscoreCodec {
   static encode = {target->
     target.replaceAll(" ", "_")
   }
