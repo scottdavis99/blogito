@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" name="EntryTests" tests="1" time="0.0010" timestamp="2008-12-19T07:03:33">
+  <properties />
+  <testcase classname="EntryTests" name="testSomething" time="0.0" />
+  <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+  <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+</testsuite>

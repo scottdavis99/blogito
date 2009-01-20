@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" id="0" name="DateTagLibTests" package="" tests="1" time="0.021" timestamp="2008-12-19T07:03:33">
+      <properties />
+
+      <testcase classname="DateTagLibTests" name="testSomething" time="0.0010" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" id="1" name="EntryControllerTests" package="" tests="1" time="0.0010" timestamp="2008-12-19T07:03:33">
+      <properties />
+
+      <testcase classname="EntryControllerTests" name="testSomething" time="0.0" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" id="2" name="EntryTests" package="" tests="1" time="0.0010" timestamp="2008-12-19T07:03:33">
+      <properties />
+
+      <testcase classname="EntryTests" name="testSomething" time="0.0" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" id="3" name="UnderscoreCodecTests" package="" tests="2" time="0.131" timestamp="2008-12-19T07:03:41">
+      <properties />
+
+      <testcase classname="UnderscoreCodecTests" name="testEncode" time="0.0020" />
+
+      <testcase classname="UnderscoreCodecTests" name="testDecode" time="0.0" />
+
+      <system-out><![CDATA[--Output from testEncode--
+--Output from testDecode--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testEncode--
+--Output from testDecode--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="scott-daviss-macbook-pro-15.local" id="4" name="UserTests" package="" tests="1" time="0.013" timestamp="2008-12-19T07:03:33">
+      <properties />
+
+      <testcase classname="UserTests" name="testSomething" time="0.0010" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
