@@ -1,0 +1,82 @@
+class EntryController {
+    
+    def index = { redirect(action:list,params:params) }
+
+    // the delete, save and update actions only accept POST requests
+    static def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+
+    def list = {
+        if(!params.max) params.max = 10
+        [ entryInstanceList: Entry.list( params ) ]
+    }
+
+    def show = {
+        def entryInstance = Entry.get( params.id )
+
+        if(!entryInstance) {
+            flash.message = "Entry not found with id ${params.id}"
+            redirect(action:list)
+        }
+        else { return [ entryInstance : entryInstance ] }
+    }
+
+    def delete = {
+        def entryInstance = Entry.get( params.id )
+        if(entryInstance) {
+            entryInstance.delete()
+            flash.message = "Entry ${params.id} deleted"
+            redirect(action:list)
+        }
+        else {
+            flash.message = "Entry not found with id ${params.id}"
+            redirect(action:list)
+        }
+    }
+
+    def edit = {
+        def entryInstance = Entry.get( params.id )
+
+        if(!entryInstance) {
+            flash.message = "Entry not found with id ${params.id}"
+            redirect(action:list)
+        }
+        else {
+            return [ entryInstance : entryInstance ]
+        }
+    }
+
+    def update = {
+        def entryInstance = Entry.get( params.id )
+        if(entryInstance) {
+            entryInstance.properties = params
+            if(!entryInstance.hasErrors() && entryInstance.save()) {
+                flash.message = "Entry ${params.id} updated"
+                redirect(action:show,id:entryInstance.id)
+            }
+            else {
+                render(view:'edit',model:[entryInstance:entryInstance])
+            }
+        }
+        else {
+            flash.message = "Entry not found with id ${params.id}"
+            redirect(action:edit,id:params.id)
+        }
+    }
+
+    def create = {
+        def entryInstance = new Entry()
+        entryInstance.properties = params
+        return ['entryInstance':entryInstance]
+    }
+
+    def save = {
+        def entryInstance = new Entry(params)
+        if(!entryInstance.hasErrors() && entryInstance.save()) {
+            flash.message = "Entry ${entryInstance.id} created"
+            redirect(action:show,id:entryInstance.id)
+        }
+        else {
+            render(view:'create',model:[entryInstance:entryInstance])
+        }
+    }
+}
