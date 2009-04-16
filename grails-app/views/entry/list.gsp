@@ -13,6 +13,11 @@
         <span class="menuButton"><g:link class="create" action="create">New Entry</g:link></span>
       </div>
     </g:if>
+    
+    <g:if test="${flash.message}">
+      <div class="message">${flash.message}</div>
+    </g:if>
+    
       <div class="body">
         <div class="list">
           <g:each in="${entryInstanceList}" status="i" var="entryInstance">

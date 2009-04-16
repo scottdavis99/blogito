@@ -1,8 +1,8 @@
 class User {
   static constraints = {
-    login(unique:true, blank:false, nullable:false)
-    password(password:true, blank:false, nullable:false)
-    name(blank:false, nullable:false)
+    login(unique:true)
+    password(password:true)
+    name()
     role(inList:["author", "admin"])
   }
   

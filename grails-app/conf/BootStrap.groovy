@@ -5,6 +5,9 @@ class BootStrap {
   def init = { servletContext ->
     switch(GrailsUtil.environment){
       case "development":
+        def admin = new User(login:"admin", password:"password", name:"Administrator", role:"admin")
+        admin.save()
+      
         def jdoe = new User(login:"jdoe", password:"password", name:"John Doe", role:"author")
         def e1 = new Entry(title:"Grails 1.1 beta is out", summary:"Check out the new features")
         def e2 = new Entry(title:"Just Released - Groovy 1.6 beta 2", summary:"It is looking good.")

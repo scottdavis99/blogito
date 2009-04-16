@@ -303,3 +303,9 @@ a.header-main:link, a.header-main:visited {
 .paginateButtons{
   clear: left;
 }
+
+#loginHeader {
+  float: right;
+  color: #fff;
+}
+
