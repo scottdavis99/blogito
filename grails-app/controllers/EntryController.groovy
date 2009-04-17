@@ -14,6 +14,24 @@ class EntryController {
   def save = {
       def entryInstance = new Entry(params)
       entryInstance.author = User.get(session.user.id)
+      
+      //handle uploaded file
+      def uploadedFile = request.getFile('payload')
+      if(!uploadedFile.empty){
+        println "Class: ${uploadedFile.class}"
+        println "Name: ${uploadedFile.name}"
+        println "OriginalFileName: ${uploadedFile.originalFilename}"
+        println "Size: ${uploadedFile.size}"
+        println "ContentType: ${uploadedFile.contentType}"
+        
+        def webRootDir = servletContext.getRealPath("/")
+        println webRootDir
+        def userDir = new File(webRootDir, "/payload/${session.user.login}")
+        userDir.mkdirs()
+        uploadedFile.transferTo( new File( userDir, uploadedFile.originalFilename))               
+        entryInstance.filename = uploadedFile.originalFilename
+      }      
+      
       if(!entryInstance.hasErrors() && entryInstance.save()) {
           flash.message = "Entry ${entryInstance.id} created"
           redirect(action:show,id:entryInstance.id)

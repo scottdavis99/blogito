@@ -2,6 +2,7 @@ class Entry {
   static constraints = {
     title()
     summary(maxSize:1000)
+    filename(blank:true, nullable:true)
     dateCreated()
     lastUpdated()
   }
@@ -14,6 +15,7 @@ class Entry {
   
   String title
   String summary
+  String filename
   Date dateCreated
   Date lastUpdated
 }

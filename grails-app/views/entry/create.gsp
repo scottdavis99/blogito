@@ -21,7 +21,7 @@
                 <g:renderErrors bean="${entryInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" method="post" >
+            <g:uploadForm action="save" method="post" >
             
               <!--input type="hidden" name="author.id" value="${session.user.id}" /-->
             
@@ -47,13 +47,22 @@
                                 </td>
                             </tr> 
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="payload">File:</label>
+                                </td>
+                                <td valign="top">
+                                    <input type="file" id="payload" name="payload"/>
+                                </td>
+                            </tr>                        
+                        
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
                     <span class="button"><input class="save" type="submit" value="Create" /></span>
                 </div>
-            </g:form>
+            </g:uploadForm>
         </div>
     </body>
 </html>
