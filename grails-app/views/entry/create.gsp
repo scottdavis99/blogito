@@ -23,7 +23,7 @@
             </g:hasErrors>
             <g:form action="save" method="post" >
             
-              <input type="hidden" name="author.id" value="${session.user.id}" />
+              <!--input type="hidden" name="author.id" value="${session.user.id}" /-->
             
                 <div class="dialog">
                     <table>

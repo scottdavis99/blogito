@@ -31,6 +31,8 @@
                         
                    	        <g:sortableColumn property="lastUpdated" title="Last Updated" />
                         
+                   	        <th>Author</th>
+                   	    
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +48,8 @@
                             <td>${fieldValue(bean:entryInstance, field:'dateCreated')}</td>
                         
                             <td>${fieldValue(bean:entryInstance, field:'lastUpdated')}</td>
+                        
+                            <td>${fieldValue(bean:entryInstance, field:'author')}</td>
                         
                         </tr>
                     </g:each>

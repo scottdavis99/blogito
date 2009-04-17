@@ -11,6 +11,19 @@ class EntryController {
 
   def scaffold = Entry
 
+  def save = {
+      def entryInstance = new Entry(params)
+      entryInstance.author = User.get(session.user.id)
+      if(!entryInstance.hasErrors() && entryInstance.save()) {
+          flash.message = "Entry ${entryInstance.id} created"
+          redirect(action:show,id:entryInstance.id)
+      }
+      else {
+          render(view:'create',model:[entryInstance:entryInstance])
+      }
+  }
+
+
   //scaffolded code with authorization checks
   def edit = {
       def entryInstance = Entry.get( params.id )

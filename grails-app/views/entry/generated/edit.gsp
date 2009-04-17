@@ -24,8 +24,6 @@
             </g:hasErrors>
             <g:form method="post" >
                 <input type="hidden" name="id" value="${entryInstance?.id}" />
-                <!--input type="hidden" name="author.id" value="${entryInstance?.author.id}" /-->
-                
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -45,6 +43,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:entryInstance,field:'summary','errors')}">
                                     <textarea rows="5" cols="40" name="summary">${fieldValue(bean:entryInstance, field:'summary')}</textarea>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="author">Author:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:entryInstance,field:'author','errors')}">
+                                    <g:select optionKey="id" from="${User.list()}" name="author.id" value="${entryInstance?.author?.id}" ></g:select>
                                 </td>
                             </tr> 
                         
