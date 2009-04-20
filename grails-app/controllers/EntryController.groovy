@@ -1,6 +1,6 @@
 class EntryController {
 
-  def beforeInterceptor = [action:this.&auth, except:["index", "list", "show"]]
+  def beforeInterceptor = [action:this.&auth, except:["index", "list", "show", "atom"]]
 
   def auth() {
     if(!session.user) {
@@ -10,6 +10,16 @@ class EntryController {
   }
 
   def scaffold = Entry
+
+  def atom = {
+    if(!params.max) params.max = 10
+    def list = Entry.list( params )    
+    def lastUpdated = list[0].lastUpdated
+    
+    [ entryInstanceList:list, lastUpdated:lastUpdated ]
+  }
+
+
 
   def save = {
       def entryInstance = new Entry(params)
