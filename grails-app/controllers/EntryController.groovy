@@ -15,6 +15,7 @@ class EntryController {
     if(!params.max) params.max = 10
     def list = Entry.list( params )    
     def lastUpdated = list[0].lastUpdated
+    println request.serverName
     
     [ entryInstanceList:list, lastUpdated:lastUpdated ]
   }

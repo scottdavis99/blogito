@@ -4,7 +4,7 @@
   <link rel="self" type="application/atom+xml" href="http://blogito.org/entry/atom" />
   <updated><g:atomDate>${lastUpdated}</g:atomDate></updated>
   <author><name>Blogito.org</name></author>
-  <id>tag:blogito.org,2009-01-23:atomFeed</id>
+  <id>tag:blogito.org,2009-01-01:entry/atom</id>
   <generator uri="http://blogito.org" version="0.1">Hand-rolled Grails code</generator>
 
   <g:each in="${entryInstanceList}" status="i" var="entryInstance">
