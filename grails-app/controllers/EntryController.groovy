@@ -15,7 +15,7 @@ class EntryController {
     if(!params.max) params.max = 10
     def list = Entry.list( params )    
     def lastUpdated = list[0].lastUpdated
-    println request.serverName
+    //println request.serverName
     
     [ entryInstanceList:list, lastUpdated:lastUpdated ]
   }
@@ -29,14 +29,16 @@ class EntryController {
       //handle uploaded file
       def uploadedFile = request.getFile('payload')
       if(!uploadedFile.empty){
+        /*
         println "Class: ${uploadedFile.class}"
         println "Name: ${uploadedFile.name}"
         println "OriginalFileName: ${uploadedFile.originalFilename}"
         println "Size: ${uploadedFile.size}"
         println "ContentType: ${uploadedFile.contentType}"
+        */
         
         def webRootDir = servletContext.getRealPath("/")
-        println webRootDir
+        //println webRootDir
         def userDir = new File(webRootDir, "/payload/${session.user.login}")
         userDir.mkdirs()
         uploadedFile.transferTo( new File( userDir, uploadedFile.originalFilename))               
