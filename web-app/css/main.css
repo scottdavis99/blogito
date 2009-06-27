@@ -309,3 +309,8 @@ a.header-main:link, a.header-main:visited {
   color: #fff;
 }
 
+#search {
+  float: right;
+  margin: 2em 1em;
+}
+

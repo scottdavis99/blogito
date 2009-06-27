@@ -11,7 +11,11 @@ class EntryController {
 
 
   def search = {
-    render Entry.search(params.q, params)
+    //render Entry.search(params.q, params)
+    def searchResults = Entry.search(params.q, params)  
+    flash.message = "${searchResults.total} results found for search: ${params.q}"
+    flash.q = params.q
+    return [searchResults:searchResults.results, resultCount:searchResults.total]
   }
 
 
