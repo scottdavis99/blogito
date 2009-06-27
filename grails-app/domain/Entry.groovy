@@ -1,4 +1,6 @@
 class Entry {
+  static searchable = true
+  
   static constraints = {
     title()
     summary(maxSize:1000)
@@ -18,4 +20,8 @@ class Entry {
   String filename
   Date dateCreated
   Date lastUpdated
+  
+  String toString(){
+    "${title} (${lastUpdated})"
+  }
 }

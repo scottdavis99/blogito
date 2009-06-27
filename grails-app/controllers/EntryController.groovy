@@ -1,6 +1,6 @@
 class EntryController {
 
-  def beforeInterceptor = [action:this.&auth, except:["index", "list", "show", "atom"]]
+  def beforeInterceptor = [action:this.&auth, except:["index", "list", "show", "atom", "search"]]
 
   def auth() {
     if(!session.user) {
@@ -8,6 +8,13 @@ class EntryController {
       return false
     }
   }
+
+
+  def search = {
+    render Entry.search(params.q, params)
+  }
+
+
 
   def scaffold = Entry
 
